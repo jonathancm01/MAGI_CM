@@ -1,0 +1,70 @@
+/* Both layouts use the same live council and Japanese typeface. */
+.design-switch { width: 100%; text-align: left; font-size: 11px; border-color: #75522c; }
+.design-switch[aria-pressed="true"] { color: #7bf0c2; border-color: #52896d; background: #183126; }
+.magi > .orbit, .magi .node-number { display: none; }
+.magi > .header > span {
+    font-size: min(10cqh, calc(24cqh / var(--caption-length)));
+    transform: scaleX(1.35);
+    white-space: nowrap;
+    line-height: 1.25;
+}
+.magi > .response > .inner { font-size: min(8cqh, calc(17cqh / var(--caption-length))); }
+
+.council-pane .magi--triangular {
+    position: relative;
+    display: block;
+    width: min(100%, 132cqh);
+    height: auto;
+    aspect-ratio: 1.32;
+    border: 2px solid #ff8d00;
+    box-shadow: inset 0 0 0 4px #000, inset 0 0 0 5px #573a12;
+}
+.magi--triangular > .connection { display: none; }
+.magi--triangular > .orbit {
+    display: block;
+    position: absolute;
+    width: 53%;
+    aspect-ratio: 1;
+    left: 23.5%;
+    top: 23%;
+    border: 1px solid #d7a15e;
+    border-radius: 50%;
+    pointer-events: none;
+}
+.magi--triangular > .title {
+    position: absolute;
+    left: 41%;
+    top: 44%;
+    width: 18%;
+    font: bold 8cqh/1 Georgia, 'Times New Roman', serif;
+}
+.magi--triangular > .header { position: absolute; top: 3%; width: 30%; height: 17%; display: flex; flex-direction: column; }
+.magi--triangular > .header.left { left: 3%; }
+.magi--triangular > .header.right { right: 3%; }
+.magi--triangular > .header > hr { flex: none; border-width: 1px; width: calc(100% - 2px); height: 2px; margin: 1px; }
+.magi--triangular > .header > span { flex: 1; align-items: center; font-size: min(10cqh, calc(22cqh / var(--caption-length))); }
+.magi--triangular > .system-status { position: absolute; left: 4.5%; top: 21%; }
+.magi--triangular > .system-status > div { font-size: 2.8cqh; margin-left: 0; transform: none; }
+.magi--triangular > .system-status > div:first-child { font-size: 5.5cqh; }
+.magi--triangular > .response { position: absolute; right: 4.5%; top: 23%; padding: 2px; border-width: 1px; }
+.magi--triangular > .response > .inner { border-width: 1px; font-size: min(7cqh, calc(18cqh / var(--caption-length))); padding: 1px 5px; }
+.magi--triangular > .wise-man {
+    position: absolute;
+    width: 26%;
+    height: auto;
+    aspect-ratio: 1;
+    padding: 2px;
+}
+.magi--triangular > .wise-man:is(.balthasar, .casper, .melchior) { clip-path: none; }
+.magi--triangular > .wise-man.balthasar { left: 37%; top: 3%; }
+.magi--triangular > .wise-man.casper { left: 17%; top: 52%; transform: rotate(-30deg); }
+.magi--triangular > .wise-man.melchior { left: 57%; top: 52%; transform: rotate(30deg); }
+.council-pane .magi--triangular > .wise-man > .inner { clip-path: none; padding: 5px; gap: 0; }
+.magi--triangular .wise-man :is(.node-runtime, .node-state, .node-activity, .classic-number) { display: none; }
+.magi--triangular .wise-man .node-number { display: block; font-size: 15cqh; line-height: 1; }
+.magi--triangular .wise-man .node-name { font-size: 4.4cqh; line-height: 1; }
+.magi--triangular > .wise-man > .inner strong { display: flex; align-items: center; justify-content: space-between; width: 100%; height: 100%; }
+.magi--triangular > .wise-man.balthasar strong { flex-direction: column; padding-top: 3%; }
+.magi--triangular > .wise-man.casper .node-name { writing-mode: vertical-rl; }
+.magi--triangular > .wise-man.melchior strong { flex-direction: row-reverse; }
+.magi--triangular > .wise-man.melchior .node-name { writing-mode: vertical-rl; transform: rotate(180deg); }

@@ -166,3 +166,9 @@ cython_debug/
 # Dash
 
 file_system_backend/
+
+# MAGI local configuration and runtime cache
+.magi/
+.cache/
+projects/
+damas/

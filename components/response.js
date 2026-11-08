@@ -34,21 +34,22 @@ function getStatusColor(status) {
         return '#ff8d00';
 
     if (status === 'error')
-        return 'gray';
+        return '#ff6b64';
 
     throw new Error('Invalid status: ' + status);
 }
 
-export default function Response({ status, question_id, answer_id }) {
-    const text = getStatusText(status);
+export default function Response({ id, status, question_id, answer_id, text, translation = '' }) {
+    text = text || getStatusText(status);
     const color = getStatusColor(status);
 
     let className = 'response';
     if (question_id !== answer_id)
         className += ' flicker';
 
-    return $('div', { className, style: { color: color, borderColor: color } },
-        $('div', { className: 'inner' }, text)
+    return $('div', { id, className, title: translation, 'aria-label': translation || text,
+        style: { color, borderColor: color, '--caption-length': text.replace(/\s/g, '').length } },
+        $('div', { className: 'inner', lang: 'ja' }, text)
     );
 }
 
